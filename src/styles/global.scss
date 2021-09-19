@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  font-family: inherit;
+}
+
+html {
+  --bg: #fff;
+  --color-text: #000;
+  --bg-btn-primary: #fd9500;
+  --bg-btn: rgba(238, 238, 238, 0.534);
+  --bg-btn-delete: #f9ece9;
+  --color-text-delete: #c15e6b;
+}
+
+html[data-theme="dark"] {
+  --bg: #17181a;
+  --color-text: #fff;
+  --bg-btn-primary: #fd9500;
+  --bg-btn: rgba(51, 51, 51, 0.459);
+  --bg-btn-delete: #2d1a1e;
+  --color-text-delete: #ad535a;
+  
+}
+
+body {
+  background: rgb(231, 226, 226);
+  color: var(--color-text);
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+}

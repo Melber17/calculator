@@ -1,0 +1,24 @@
+{
+  "env": {
+    "es6": true,
+
+    "browser": true,
+    "amd": true,
+    "node": true
+  },
+  "rules": {
+    "root": true,
+    "quotes": [2, "double"],
+    "curly": ["error", "multi"],
+    "no-var": "error",
+    "semi": "error",
+    "indent": "error",
+    "no-multi-spaces": "error",
+    "space-in-parens": "error",
+    "no-multiple-empty-lines": "error",
+    "prefer-const": "error",
+    "no-use-before-define": "error",
+    "no-undef": "off"
+  },
+  "extends": "eslint:recommended"
+}

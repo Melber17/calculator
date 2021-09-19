@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculator">
+        <div class="calculator__top">
+          <div
+            class="calculator__top-previousOperand"
+            data-previous-operand
+          ></div>
+          <div
+            class="calculator__top-currentOperand"
+            data-current-operand
+          ></div>
+        </div>
+        <div class="calculator__buttons">
+          <div class="col">
+            <button class="col__btn delete" data-delete>C</button>
+            <button class="col__btn delete" data-delete>AC</button>
+            <button class="col__btn" data-symbol>(</button>
+            <button class="col__btn" data-symbol>)</button>
+            <button class="col__btn" data-operation>+/-</button>
+            <button class="col__btn" data-operation-percent>%</button>
+            <button class="col__btn primary" data-operation>÷</button>
+          </div>
+          <div class="col">
+            <button class="col__btn complex">2<sup>nd</sup></button>
+            <button class="col__btn">mc</button>
+            <button class="col__btn">m+</button>
+            <button class="col__btn" data-number>1</button>
+
+            <button class="col__btn" data-number>2</button>
+            <button class="col__btn" data-number>3</button>
+            <button class="col__btn primary multiplication" data-operation>
+              *
+            </button>
+          </div>
+          <div class="col">
+            <button class="col__btn">m-</button>
+
+            <button class="col__btn">mr</button>
+            <button class="col__btn">ln</button>
+            <button class="col__btn" data-number>4</button>
+            <button class="col__btn" data-number>5</button>
+            <button class="col__btn" data-number>6</button>
+            <button class="col__btn primary" data-operation>-</button>
+          </div>
+          <div class="col">
+            <button class="col__btn complex">x<sup>2</sup></button>
+            <button class="col__btn complex">x<sup>3</sup></button>
+            <button class="col__btn complex">x<sup>y</sup></button>
+            <button class="col__btn" data-number>7</button>
+            <button class="col__btn" data-number>8</button>
+            <button class="col__btn" data-number>9</button>
+            <button class="col__btn primary" data-operation>+</button>
+          </div>
+
+          <div class="col">
+            <button class="col__btn complex">10<sup>x</sup></button>
+            <button class="col__btn complex">e<sup>x</sup></button>
+            <button class="col__btn" data-delete>1/x</button>
+            <button class="col__btn zero" data-number>0</button>
+            <button class="col__btn" data-number>.</button>
+
+            <button class="col__btn result" data-equal>=</button>
+          </div>
+          <div class="col">
+            <button class="col__btn complex">√x</button>
+            <button class="col__btn complex">∛x</button>
+            <button class="col__btn complex"><sup>y</sup>√x</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
