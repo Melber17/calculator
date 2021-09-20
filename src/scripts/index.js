@@ -3,10 +3,9 @@ import {
   handlerClickDelete,
   handlerCountResult,
   handlerChangeMemory,
-  handlerClickEuler,
+ 
   handlerClickFraction,
-  handlerClickFractionToX,
-} from "./handlers/handlers";
+} from "./handlers/handlersToDisplay";
 import {
   handlerClickMainOperation,
   handleClickSymbol,
@@ -15,8 +14,10 @@ import {
   handlerClickCustomRadical,
   handlerChangeSign,
   handlerClickLog,
+  handlerClickEuler,
   handlerClickSecondFunction,
   handlerCLickDegree,
+  handlerClickFractionToX,
 } from "./handlers/mainOperations";
 import "../styles/index.scss";
 
@@ -56,7 +57,6 @@ const radicalButtons = document.querySelectorAll("[data-radical]");
 const radicalCustomBtn = document.querySelector("[data-custom-radical]");
 
 const logBtn = document.querySelector("[data-log]");
-
 
 export const radicalCustomBtnHelper = document.querySelector(
   "[data-current-operand-helper]"
@@ -109,5 +109,4 @@ radicalCustomBtn.addEventListener("click", handlerClickCustomRadical);
 
 secondBtn.addEventListener("click", handlerClickSecondFunction);
 
-
-logBtn.addEventListener("click", handlerClickLog)
+logBtn.addEventListener("click", handlerClickLog);

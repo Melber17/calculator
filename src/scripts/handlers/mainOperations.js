@@ -14,12 +14,6 @@ import {
 } from "../index";
 
 export const handlerClickMainOperation = (btn) => {
-  console.log(
-    "if ",
-    Number.isInteger(
-      +currentOperand.textContent[currentOperand.textContent.length - 1]
-    )
-  );
   if (
     !currentOperand.textContent ||
     currentOperand.textContent[currentOperand.textContent.length - 1] ===
@@ -193,4 +187,19 @@ export const handlerClickSecondFunction = () => {
 export const handlerClickLog = () => {
   if (!currentOperand.innerText) return;
   currentOperand.innerText = Math.log(currentOperand.innerText);
+};
+
+export const handlerClickFractionToX = () => {
+  if (!currentOperand.innerText) return;
+  currentOperand.innerText = 1 / +currentOperand.innerText;
+};
+
+export const handlerClickFraction = () => {
+  if (!currentOperand.innerText) return;
+  currentOperand.innerText = Math.pow(10, +currentOperand.innerText);
+};
+
+export const handlerClickEuler = () => {
+  if (!currentOperand.innerText) return;
+  currentOperand.innerText = Math.exp(+currentOperand.innerText);
 };

@@ -155,17 +155,4 @@ export const handlerChangeMemory = (btn) => {
   }
 };
 
-export const handlerClickEuler = () => {
-  if (!currentOperand.innerText) return;
-  currentOperand.innerText = Math.exp(+currentOperand.innerText);
-};
 
-export const handlerClickFraction = () => {
-  if (!currentOperand.innerText) return;
-  currentOperand.innerText = Math.pow(10, +currentOperand.innerText);
-};
-
-export const handlerClickFractionToX = () => {
-  if (!currentOperand.innerText) return;
-  currentOperand.innerText = 1 / +currentOperand.innerText;
-};
