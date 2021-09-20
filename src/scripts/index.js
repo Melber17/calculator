@@ -3,8 +3,6 @@ import {
   handlerClickDelete,
   handlerCountResult,
   handlerChangeMemory,
- 
-  handlerClickFraction,
 } from "./handlers/handlersToDisplay";
 import {
   handlerClickMainOperation,
@@ -14,6 +12,7 @@ import {
   handlerClickCustomRadical,
   handlerChangeSign,
   handlerClickLog,
+  handlerClickFraction,
   handlerClickEuler,
   handlerClickSecondFunction,
   handlerCLickDegree,
