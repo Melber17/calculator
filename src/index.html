@@ -20,6 +20,12 @@
             class="calculator__top-previousOperand"
             data-previous-operand
           ></div>
+          <div class="calculator__top-memory" data-memory>
+            
+          </div>
+          <div class="calculator__top-operandHelper" data-current-operand-helper>
+
+          </div>
           <div
             class="calculator__top-currentOperand"
             data-current-operand
@@ -31,14 +37,14 @@
             <button class="col__btn delete" data-delete>AC</button>
             <button class="col__btn" data-symbol>(</button>
             <button class="col__btn" data-symbol>)</button>
-            <button class="col__btn" data-operation>+/-</button>
+            <button class="col__btn" data-opposite>+/-</button>
             <button class="col__btn" data-operation-percent>%</button>
             <button class="col__btn primary" data-operation>÷</button>
           </div>
           <div class="col">
-            <button class="col__btn complex">2<sup>nd</sup></button>
-            <button class="col__btn">mc</button>
-            <button class="col__btn">m+</button>
+            <button class="col__btn complex" data-second>2<sup>nd</sup></button>
+            <button class="col__btn" data-change-memory>mc</button>
+            <button class="col__btn" data-change-memory>m+</button>
             <button class="col__btn" data-number>1</button>
 
             <button class="col__btn" data-number>2</button>
@@ -48,19 +54,19 @@
             </button>
           </div>
           <div class="col">
-            <button class="col__btn">m-</button>
+            <button class="col__btn" data-change-memory>m-</button>
 
-            <button class="col__btn">mr</button>
-            <button class="col__btn">ln</button>
+            <button class="col__btn" data-change-memory>mr</button>
+            <button class="col__btn"  data-log>ln</button>
             <button class="col__btn" data-number>4</button>
             <button class="col__btn" data-number>5</button>
             <button class="col__btn" data-number>6</button>
             <button class="col__btn primary" data-operation>-</button>
           </div>
           <div class="col">
-            <button class="col__btn complex">x<sup>2</sup></button>
-            <button class="col__btn complex">x<sup>3</sup></button>
-            <button class="col__btn complex">x<sup>y</sup></button>
+            <button class="col__btn complex" data-degree >x<sup>2</sup></button>
+            <button class="col__btn complex" data-degree>x<sup>3</sup></button>
+            <button class="col__btn complex" data-degree>x<sup>y</sup></button>
             <button class="col__btn" data-number>7</button>
             <button class="col__btn" data-number>8</button>
             <button class="col__btn" data-number>9</button>
@@ -68,18 +74,18 @@
           </div>
 
           <div class="col">
-            <button class="col__btn complex">10<sup>x</sup></button>
-            <button class="col__btn complex">e<sup>x</sup></button>
-            <button class="col__btn" data-delete>1/x</button>
+            <button class="col__btn complex" data-fraction>10<sup>x</sup></button>
+            <button class="col__btn complex" data-euler>e<sup>x</sup></button>
+            <button class="col__btn" data-fraction-x>1/x</button>
             <button class="col__btn zero" data-number>0</button>
             <button class="col__btn" data-number>.</button>
 
             <button class="col__btn result" data-equal>=</button>
           </div>
           <div class="col">
-            <button class="col__btn complex">√x</button>
-            <button class="col__btn complex">∛x</button>
-            <button class="col__btn complex"><sup>y</sup>√x</button>
+            <button class="col__btn complex" data-radical>√x</button>
+            <button class="col__btn complex" data-radical>∛x</button>
+            <button class="col__btn complex" data-custom-radical><sup>y</sup>√x</button>
           </div>
         </div>
       </div>

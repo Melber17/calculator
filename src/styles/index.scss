@@ -14,7 +14,7 @@
   border-radius: 1em;
   padding: 1em;
   background-color: var(--bg);
-  box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
   &__top {
     width: 100%;
     min-height: 150px;
@@ -34,6 +34,18 @@
       font-size: 2em;
       min-height: 38px;
       margin-top: 1em;
+    }
+    &-memory {
+      font-size: 1.5em;
+      margin-top: 0.3em;
+      min-height: 30px;
+      color: #777;
+    }
+    &-operandHelper {
+      font-size: 1.5em;
+      margin-top: 0.3em;
+      min-height: 30px;
+      color: #777;
     }
   }
 }
@@ -81,7 +93,6 @@
     }
     &.zero {
       width: 130px;
-    
     }
     &.delete {
       background: var(--bg-btn-delete);

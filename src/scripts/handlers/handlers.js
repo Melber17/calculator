@@ -1,20 +1,19 @@
-import { getDisplayNumber } from "../helpers/getDisplayNumber";
 import {
   addition,
   division,
   multiplication,
+  radicalExtraction,
   subtraction,
-} from "../helpers/mainMathFunctions";
-import { parserValues } from "../helpers/parserValues";
-import { previousOperand, currentOperand } from "../index";
-
-const displayCurrentValues = (value1, value2) => {
-  previousOperand.innerText = `${value1} ${value2}`;
-  currentOperand.textContent = "";
-};
-
+} from "../helpers/mathFunctions";
+import { displayCurrentValues } from "../helpers/displayValues";
+import { parserValues } from "../helpers/displayValues";
+import {
+  previousOperand,
+  currentOperand,
+  memoryContainer,
+  radicalCustomBtnHelper,
+} from "../index";
 export const handlerClickNumber = (number) => {
-  console.log("number", number.target.textContent);
   if (
     currentOperand.textContent.includes(".") &&
     number.target.textContent === "."
@@ -28,7 +27,6 @@ export const handlerClickNumber = (number) => {
   )
     return;
   const textContent = currentOperand.textContent + number.target.textContent;
-  // currentOperand.innerText = getDisplayNumber(textContent);
   currentOperand.innerText = textContent;
 };
 
@@ -41,92 +39,24 @@ export const handlerClickDelete = (btn) => {
   } else {
     currentOperand.innerText = "";
     previousOperand.innerText = "";
+    radicalCustomBtnHelper.innerText = "";
   }
-};
-
-export const handlerClickMainOperation = (btn) => {
-  if (!currentOperand.textContent) return;
-
-  if (
-    (currentOperand.textContent.split("(").length > 1 &&
-      currentOperand.textContent.split("(").length - 1) !==
-    (currentOperand.textContent.split(")").length > 1 &&
-      currentOperand.textContent.split(")").length - 1)
-  ) {
-    alert("Expression isn't written correctly. Probably mistake is in ( or )");
-    return;
-  }
-  if (
-    previousOperand.textContent.includes("(") ||
-    currentOperand.textContent.includes(")")
-  ) {
-    console.log(
-      "value",
-      previousOperand.textContent + currentOperand.textContent
-    );
-    const result = parserValues(
-      previousOperand.textContent + currentOperand.textContent
-    );
-    displayCurrentValues(result, btn.target.innerText);
-    return;
-  }
-  if (previousOperand.textContent.includes("*")) {
-    const result = multiplication(
-      +previousOperand.textContent.substring(
-        0,
-        previousOperand.innerText.length - 2
-      ),
-      +currentOperand.textContent
-    );
-    displayCurrentValues(result, btn.target.innerText);
-    return;
-  }
-
-  if (previousOperand.textContent.includes("+")) {
-    const result = addition(
-      +previousOperand.textContent.substring(
-        0,
-        previousOperand.innerText.length - 2
-      ),
-      +currentOperand.textContent
-    );
-    displayCurrentValues(result, btn.target.innerText);
-    return;
-  }
-  if (previousOperand.textContent.includes("-")) {
-    const result = subtraction(
-      +previousOperand.textContent.substring(
-        0,
-        previousOperand.innerText.length - 2
-      ),
-      +currentOperand.textContent
-    );
-    displayCurrentValues(result, btn.target.innerText);
-    return;
-  }
-
-  if (previousOperand.textContent.includes("÷")) {
-    console.log("current", currentOperand.textContent);
-    if (currentOperand.textContent == 0) {
-      alert("Can't division number to 0");
-      return;
-    }
-    const result = division(
-      +previousOperand.textContent.substring(
-        0,
-        previousOperand.innerText.length - 2
-      ),
-      +currentOperand.textContent
-    );
-    displayCurrentValues(result, btn.target.innerText);
-    return;
-  }
-
-  previousOperand.innerText = `${currentOperand.textContent} ${btn.target.innerText}`;
-  currentOperand.textContent = "";
 };
 
 export const handlerCountResult = () => {
+  if (radicalCustomBtnHelper.textContent.includes("√")) {
+    currentOperand.innerText = radicalExtraction(
+      +radicalCustomBtnHelper.textContent.substring(
+        0,
+        radicalCustomBtnHelper.innerText.length - 1
+      ),
+      +currentOperand.textContent
+    );
+    radicalCustomBtnHelper.innerText = "";
+    previousOperand.innerText = "";
+    return;
+  }
+
   if (!previousOperand.textContent || !currentOperand.textContent) return;
   if (
     previousOperand.textContent.includes("(") ||
@@ -182,15 +112,60 @@ export const handlerCountResult = () => {
         +currentOperand.textContent
       );
       previousOperand.innerText = "";
+      break;
+    case "^":
+      if (currentOperand.textContent == 0) {
+        alert("Can't division number to 0");
+        return;
+      }
+      currentOperand.innerText = Math.pow(
+        +previousOperand.textContent.substring(
+          0,
+          previousOperand.innerText.length - 2
+        ),
+        +currentOperand.textContent
+      );
+      previousOperand.innerText = "";
   }
 };
 
-export const handleClickSymbol = (symbol) => {
-  currentOperand.innerText += symbol.target.innerText;
+export const handlerChangeMemory = (btn) => {
+  switch (btn.target.innerText) {
+    case "mc":
+      memoryContainer.innerText = "";
+      break;
+    case "mr":
+      if (memoryContainer.innerText) {
+        currentOperand.innerText = memoryContainer.innerText.substring(3);
+      }
+      break;
+    case "m+":
+      if (currentOperand.innerText) {
+        memoryContainer.innerText =
+          "M: " +
+          (+memoryContainer.innerText.substring(3) + +currentOperand.innerText);
+      }
+      break;
+    case "m-":
+      if (currentOperand.innerText) {
+        memoryContainer.innerText =
+          "M: " +
+          (+memoryContainer.innerText.substring(3) - +currentOperand.innerText);
+      }
+  }
 };
 
+export const handlerClickEuler = () => {
+  if (!currentOperand.innerText) return;
+  currentOperand.innerText = Math.exp(+currentOperand.innerText);
+};
 
+export const handlerClickFraction = () => {
+  if (!currentOperand.innerText) return;
+  currentOperand.innerText = Math.pow(10, +currentOperand.innerText);
+};
 
-export const handlerClickPercent = () => {
-  currentOperand.innerText /= 100
-}
+export const handlerClickFractionToX = () => {
+  if (!currentOperand.innerText) return;
+  currentOperand.innerText = 1 / +currentOperand.innerText;
+};
