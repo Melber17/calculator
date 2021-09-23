@@ -1,4 +1,4 @@
-import { previousOperand, currentOperand } from "../index";
+import { previousOperand, currentOperand } from "../constants/constants";
 
 
 export const parserValues = (expression) => {

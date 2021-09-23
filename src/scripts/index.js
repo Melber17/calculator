@@ -1,111 +1,99 @@
+// import {
+//   handlerClickRadical,
+//   handlerClickCustomRadical,
+//   handlerClickLog,
+//   handlerClickFraction,
+//   handlerClickEuler,
+//   handlerClickSecondFunction,
+//   handlerCLickDegree,
+//   handlerClickFractionToX,
+// } from "./handlers/mainOperations";
 import {
-  handlerClickNumber,
-  handlerClickDelete,
-  handlerCountResult,
+  degreeButtons,
+  deleteButtons,
+  eulerBtn,
+  fractionTenthBtn,
+  equalButton,
   handlerChangeMemory,
-} from "./handlers/handlersToDisplay";
-import {
-  handlerClickMainOperation,
-  handleClickSymbol,
-  handlerClickPercent,
-  handlerClickRadical,
-  handlerClickCustomRadical,
   handlerChangeSign,
-  handlerClickLog,
-  handlerClickFraction,
   handlerClickEuler,
-  handlerClickSecondFunction,
-  handlerCLickDegree,
+  handlerClickFraction,
+  handlerClickLog,
   handlerClickFractionToX,
-} from "./handlers/mainOperations";
+  radicalButtons,
+  radicalCustomBtn,
+  secondBtn,
+  logBtn,
+  fractionToXBtn,
+  handlerClickDelete,
+  handlerClickMainOperation,
+  handlerClickCustomRadical,
+  handlerClickSecondFunction,
+  handlerClickPercent,
+  handlerClickSymbol,
+  handlerClickRadical,
+  handlerCountResult,
+  handlerNumbers,
+  mainOperationsButtons,
+  memoryButtons,
+  numberButtons,
+  oppositeFuncBtn,
+  percentFuncBtn,
+  symbolButtons,
+  handlerClickDegree,
+} from "./constants/constants";
 import "../styles/index.scss";
 
-// Variables for elements
-export const previousOperand = document.querySelector(
-  "[data-previous-operand]"
-);
-export const currentOperand = document.querySelector("[data-current-operand]");
-
-const numberButtons = document.querySelectorAll("[data-number]");
-
-const mainOperationsButtons = document.querySelectorAll("[data-operation]");
-
-const deleteButtons = document.querySelectorAll("[data-delete]");
-
-const equalButton = document.querySelector("[data-equal]");
-
-const symbolButtons = document.querySelectorAll("[data-symbol]");
-
-const percentFuncBtn = document.querySelector("[data-operation-percent");
-
-const oppositeFuncBtn = document.querySelector("[data-opposite]");
-
-export const memoryContainer = document.querySelector("[data-memory]");
-const memoryButtons = document.querySelectorAll("[data-change-memory]");
-
-const degreeButtons = document.querySelectorAll("[data-degree]");
-
-const eulerBtn = document.querySelector("[data-euler]");
-
-const fractionTenthBtn = document.querySelector("[data-fraction]");
-
-const fractionToXBtn = document.querySelector("[data-fraction-x]");
-
-const radicalButtons = document.querySelectorAll("[data-radical]");
-
-const radicalCustomBtn = document.querySelector("[data-custom-radical]");
-
-const logBtn = document.querySelector("[data-log]");
-
-export const radicalCustomBtnHelper = document.querySelector(
-  "[data-current-operand-helper]"
-);
-
-const secondBtn = document.querySelector("[data-second]");
-
-// handlers for buttons
 numberButtons.forEach((btn) =>
-  btn.addEventListener("click", handlerClickNumber)
+  btn.addEventListener("click", (btn) => handlerNumbers.handler(btn))
 );
 
 deleteButtons.forEach((btn) =>
-  btn.addEventListener("click", handlerClickDelete)
+  btn.addEventListener("click", (btn) => handlerClickDelete.handler(btn))
 );
 
 mainOperationsButtons.forEach((btn) =>
-  btn.addEventListener("click", handlerClickMainOperation)
+  btn.addEventListener("click", (btn) => handlerClickMainOperation.handler(btn))
 );
 
-equalButton.addEventListener("click", handlerCountResult);
+equalButton.addEventListener("click", () => handlerCountResult.handler());
 
 symbolButtons.forEach((symbol) =>
-  symbol.addEventListener("click", handleClickSymbol)
+  symbol.addEventListener("click", (symbol) =>
+    handlerClickSymbol.handler(symbol)
+  )
 );
 
-percentFuncBtn.addEventListener("click", handlerClickPercent);
+percentFuncBtn.addEventListener("click", () => handlerClickPercent.handler());
 
-oppositeFuncBtn.addEventListener("click", handlerChangeSign);
+oppositeFuncBtn.addEventListener("click", () => handlerChangeSign.handler());
 
 memoryButtons.forEach((btn) =>
-  btn.addEventListener("click", handlerChangeMemory)
+  btn.addEventListener("click", (btn) => handlerChangeMemory.handler(btn))
 );
 
 degreeButtons.forEach((btn) =>
-  btn.addEventListener("click", handlerCLickDegree)
+  btn.addEventListener("click", (btn) => handlerClickDegree.handler(btn))
 );
 
-eulerBtn.addEventListener("click", handlerClickEuler);
+eulerBtn.addEventListener("click", () => handlerClickEuler.handler());
 
-fractionTenthBtn.addEventListener("click", handlerClickFraction);
+fractionTenthBtn.addEventListener("click", () =>
+  handlerClickFraction.handler()
+);
 
-fractionToXBtn.addEventListener("click", handlerClickFractionToX);
+fractionToXBtn.addEventListener("click", () =>
+  handlerClickFractionToX.handler()
+);
 
 radicalButtons.forEach((btn) =>
-  btn.addEventListener("click", handlerClickRadical)
+  btn.addEventListener("click", (btn) => handlerClickRadical.handler(btn))
 );
 
-radicalCustomBtn.addEventListener("click", handlerClickCustomRadical);
+radicalCustomBtn.addEventListener("click", () =>
+  handlerClickCustomRadical.handler()
+);
 
-secondBtn.addEventListener("click", handlerClickSecondFunction);
+secondBtn.addEventListener("click", () => handlerClickSecondFunction.handler());
 
-logBtn.addEventListener("click", handlerClickLog);
+logBtn.addEventListener("click", () => handlerClickLog.handler());
