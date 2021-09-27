@@ -1,9 +1,8 @@
 import {
-  HandlerChangeMemory,
   HandlerClickDelete,
   HandlerClickNumber,
-  HandlerCountResult,
-} from "../handlers/handlersToDisplay";
+} from "../handlers/handlersToDisplay/handlersToDisplayResult";
+import { HandlerChangeMemory } from "../handlers/handlersToDisplay/handlersMemory";
 import {
   HandlerChangeSign,
   HandlerClickCustomRadical,
@@ -18,6 +17,7 @@ import {
   HandlerClickSecondFunction,
   HandlerClickSymbol,
 } from "../handlers/mainOperations";
+import { HandlerCountResult } from "../handlers/handlersToDisplay/handlersToResult";
 
 export const previousOperand = document.querySelector(
   "[data-previous-operand]"

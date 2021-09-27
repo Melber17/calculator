@@ -12,7 +12,7 @@ import {
   currentOperand,
   radicalCustomBtnHelper,
 } from "../constants/constants";
-import { Calculator } from "./handlersToDisplay";
+import { Calculator } from "./handlersToDisplay/handlersToDisplayResult";
 
 export class HandlerClickMainOperation extends Calculator {
   constructor(currentOperand, previousOperand, radicalCustomBtnHelper) {
