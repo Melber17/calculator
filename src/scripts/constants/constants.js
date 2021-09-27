@@ -3,21 +3,9 @@ import {
   HandlerClickNumber,
 } from "../handlers/handlersToDisplay/handlersToDisplayResult";
 import { HandlerChangeMemory } from "../handlers/handlersToDisplay/handlersMemory";
-import {
-  HandlerChangeSign,
-  HandlerClickCustomRadical,
-  HandlerClickDegree,
-  HandlerClickEuler,
-  HandlerClickFraction,
-  HandlerClickFractionToX,
-  HandlerClickLog,
-  HandlerClickMainOperation,
-  HandlerClickPercent,
-  HandlerClickRadical,
-  HandlerClickSecondFunction,
-  HandlerClickSymbol,
-} from "../handlers/mainOperations";
 import { HandlerCountResult } from "../handlers/handlersToDisplay/handlersToResult";
+import { HandlerClickMainOperation } from "../handlers/countOperations/mainOperations";
+import { HandlerChangeSign, HandlerClickCustomRadical, HandlerClickDegree, HandlerClickEuler, HandlerClickFraction, HandlerClickFractionToX, HandlerClickLog, HandlerClickPercent, HandlerClickRadical, HandlerClickSecondFunction, HandlerClickSymbol } from "../handlers/countOperations/collateralOperations";
 
 export const previousOperand = document.querySelector(
   "[data-previous-operand]"
