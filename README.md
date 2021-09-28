@@ -59,8 +59,8 @@ calculator
 │   yarn.lock
 │
 └───src─styles
-    │     global.scss
-    │     index.scss
+│   │     global.scss
+│   │     index.scss
 │   │
 │   │
 │   └───scripts
