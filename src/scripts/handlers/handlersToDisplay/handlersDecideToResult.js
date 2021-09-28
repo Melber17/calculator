@@ -6,7 +6,7 @@ export class HandlerCountResult extends Calculator {
   constructor(currentOperand, previousOperand, radicalCustomBtnHelper) {
     super(currentOperand, previousOperand);
     this.radicalCustomBtnHelper = radicalCustomBtnHelper;
-  }
+   }
   handler() {
     if (this.radicalCustomBtnHelper.textContent.includes("√")) {
       this.currentOperand.innerText = radicalExtraction(

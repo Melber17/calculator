@@ -3,7 +3,7 @@ import {
   HandlerClickNumber,
 } from "../handlers/handlersToDisplay/handlersToDisplayResult";
 import { HandlerChangeMemory } from "../handlers/handlersToDisplay/handlersMemory";
-import { HandlerCountResult } from "../handlers/handlersToDisplay/handlersToResult";
+import { HandlerCountResult } from "../handlers/handlersToDisplay/handlersDecideToResult";
 import { HandlerClickMainOperation } from "../handlers/countOperations/mainOperations";
 import { HandlerChangeSign, HandlerClickCustomRadical, HandlerClickDegree, HandlerClickEuler, HandlerClickFraction, HandlerClickFractionToX, HandlerClickLog, HandlerClickPercent, HandlerClickRadical, HandlerClickSecondFunction, HandlerClickSymbol } from "../handlers/countOperations/collateralOperations";
 

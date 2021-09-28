@@ -1,10 +1,3 @@
-// import {
-//   previousOperand,
-//   currentOperand,
-//   radicalCustomBtnHelper,
-// } from "../constants/constants";
-// import { Calculator } from "./handlersToDisplay/handlersToDisplayResult";
-
 import {
   currentOperand,
   previousOperand,
@@ -15,7 +8,7 @@ import { Calculator } from "../handlersToDisplay/handlersToDisplayResult";
 export class HandlerClickSymbol extends Calculator {
   handler(symbol) {
     this.currentOperand.innerText += symbol.target.innerText;
-  }
+      }
 }
 
 export class HandlerClickPercent extends Calculator {

@@ -1,13 +1,3 @@
-// import {
-//   handlerClickRadical,
-//   handlerClickCustomRadical,
-//   handlerClickLog,
-//   handlerClickFraction,
-//   handlerClickEuler,
-//   handlerClickSecondFunction,
-//   handlerCLickDegree,
-//   handlerClickFractionToX,
-// } from "./handlers/mainOperations";
 import {
   degreeButtons,
   deleteButtons,
