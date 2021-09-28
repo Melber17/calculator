@@ -58,31 +58,39 @@ calculator
 │   webpack.config.js
 │   yarn.lock
 │
-└───src
-    │
-    └───scripts
-        │   file111.txt
-        │   file112.txt
-        │
-        │
-        └─constants
-        │          constants.js
-        │
-        │             
-        └─handlers                   
-        │      countOperations  // folder with handlers, which do main operations
-        |                   collateralOperations.js
-        |                   mainOperations.js
-        │      handlersToDisplay // folder with handlers, which  help with display values
-        │                    handlersDecideToResult.js
-        │                   handlersMemory.js
-        │                   handlersToDisplayResult.js
-        │
-        │
-        │
-        └─helpers  // helper functions
-        │     displayValues.js
-        │     mathFunctions.js
-        |
-        └─index.js // root file
+└───src─styles
+    │     global.scss
+    │     index.scss
+│   │
+│   │
+│   └───scripts
+│       │   file111.txt
+│       │   file112.txt
+│       │
+│       │
+│       └─constants
+│       │          constants.js
+│       │
+│       │
+│       └─handlers
+│       │      countOperations  // folder with handlers, which do main operations
+│       |                   collateralOperations.js
+│       |                   mainOperations.js
+│       │      handlersToDisplay // folder with handlers, which  help with display values
+│       │                    handlersDecideToResult.js
+│       │                   handlersMemory.js
+│       │                   handlersToDisplayResult.js
+│       │
+│       │
+│       │
+│       └─helpers  // helper functions
+│       │     displayValues.js
+│       │     mathFunctions.js
+│       |
+│       └─index.js // root file
+│
+│
+└───tests // folder with tests main math functions
+       mathFunctions.test.js
+
 ```
