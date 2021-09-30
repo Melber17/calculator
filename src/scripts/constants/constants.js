@@ -2,10 +2,39 @@ import {
   HandlerClickDelete,
   HandlerClickNumber,
 } from "../handlers/handlersToDisplay/handlersToDisplayResult";
-import { HandlerChangeMemory } from "../handlers/handlersToDisplay/handlersMemory";
-import { HandlerCountResult } from "../handlers/handlersToDisplay/handlersDecideToResult";
+import {
+  ClearMemoryHandler,
+  HandlerChangeMemory,
+  MinusMemoryHandler,
+  PlusCallMemoryHandler,
+  ReCallMemoryHandler,
+} from "../handlers/handlersToDisplay/handlersMemory";
+import {
+  HandlerAddition,
+  HandlerCountResult,
+  HandlerDegreeOfNumbers,
+  HandlerDivision,
+  HandlerMultiplication,
+  HandlerSubtraction,
+} from "../handlers/countOperations/handlersDecideToResult";
 import { HandlerClickMainOperation } from "../handlers/countOperations/mainOperations";
-import { HandlerChangeSign, HandlerClickCustomRadical, HandlerClickDegree, HandlerClickEuler, HandlerClickFraction, HandlerClickFractionToX, HandlerClickLog, HandlerClickPercent, HandlerClickRadical, HandlerClickSecondFunction, HandlerClickSymbol } from "../handlers/countOperations/collateralOperations";
+import {
+  HandlerChangeSign,
+  HandlerClickCustomRadical,
+  HandlerClickDegree,
+  HandlerClickEuler,
+  HandlerClickFraction,
+  HandlerClickFractionToX,
+  HandlerClickLog,
+  HandlerClickPercent,
+  HandlerClickRadical,
+  HandlerClickSecondFunction,
+  HandlerClickSymbol,
+  HandlerRadical,
+  HandlerRadicalWithDegree,
+  HandlerSecondRadical,
+  HandlerThirdRadical,
+} from "../handlers/countOperations/collateralOperations";
 
 export const previousOperand = document.querySelector(
   "[data-previous-operand]"
@@ -73,11 +102,17 @@ export const handlerChangeMemory = new HandlerChangeMemory(
   memoryContainer
 );
 
+export const clearMemoryHandler = new ClearMemoryHandler();
+
+export const reCallMemoryHandler = new ReCallMemoryHandler();
+
+export const plusCallMemoryHandler = new PlusCallMemoryHandler();
 export const handlerClickMainOperation = new HandlerClickMainOperation(
   currentOperand,
   previousOperand,
   radicalCustomBtnHelper
 );
+export const minusMemoryHandler = new MinusMemoryHandler();
 export const handlerClickSymbol = new HandlerClickSymbol(
   currentOperand,
   previousOperand
@@ -101,18 +136,41 @@ export const handlerClickRadical = new HandlerClickRadical(
   currentOperand,
   previousOperand
 );
+export const handlerRadical = new HandlerRadical();
+
+export const handlerRadicalWithDegree = new HandlerRadicalWithDegree();
 
 export const handlerClickCustomRadical = new HandlerClickCustomRadical(
   currentOperand,
   previousOperand,
   radicalCustomBtnHelper
 );
-
+export const handlerSecondRadical = new HandlerSecondRadical();
+export const handlerThirdRadical = new HandlerThirdRadical();
 export const handlerClickSecondFunction = new HandlerClickSecondFunction(
   currentOperand,
   previousOperand
 );
-
+export const handlerAddition = new HandlerAddition(
+  currentOperand,
+  previousOperand
+);
+export const handlerSubtraction = new HandlerSubtraction(
+  currentOperand,
+  previousOperand
+);
+export const handlerDegreeOfNumbers = new HandlerDegreeOfNumbers(
+  currentOperand,
+  previousOperand
+);
+export const handlerDivision = new HandlerDivision(
+  currentOperand,
+  previousOperand
+);
+export const handlerMultiplication = new HandlerMultiplication(
+  currentOperand,
+  previousOperand
+);
 export const handlerClickLog = new HandlerClickLog(
   currentOperand,
   previousOperand

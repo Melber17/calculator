@@ -1,5 +1,10 @@
 import {
   currentOperand,
+  handlerRadical,
+  handlerRadicalTwo,
+  handlerRadicalWithDegree,
+  handlerSecondRadical,
+  handlerThirdRadical,
   previousOperand,
   radicalCustomBtnHelper,
 } from "../../constants/constants";
@@ -8,7 +13,7 @@ import { Calculator } from "../handlersToDisplay/handlersToDisplayResult";
 export class HandlerClickSymbol extends Calculator {
   handler(symbol) {
     this.currentOperand.innerText += symbol.target.innerText;
-      }
+  }
 }
 
 export class HandlerClickPercent extends Calculator {
@@ -30,40 +35,44 @@ export class HandlerClickDegree extends Calculator {
     }
     switch (btn.target.innerText) {
       case "x2":
-        this.currentOperand.innerText = Math.pow(
-          +this.currentOperand.innerText,
-          2
-        );
+        handlerRadical.handler(this.currentOperand, 2);
         break;
       case "2":
-        this.currentOperand.innerText = Math.pow(
-          +this.currentOperand.innerText,
-          2
-        );
+        handlerRadical.handler(this.currentOperand, 2);
         break;
       case "x3":
-        this.currentOperand.innerText = Math.pow(
-          +this.currentOperand.innerText,
-          3
-        );
+        handlerRadical.handler(this.currentOperand, 3);
+
         break;
       case "3":
-        this.currentOperand.innerText = Math.pow(
-          +this.currentOperand.innerText,
-          3
-        );
+        handlerRadical.handler(this.currentOperand, 3);
+
         break;
       case "xy":
-        this.previousOperand.innerText = `${this.currentOperand.innerText} ^`;
-        this.currentOperand.innerText = "";
+        handlerRadicalWithDegree.handler(
+          this.previousOperand,
+          this.currentOperand
+        );
         break;
       case "y":
-        this.previousOperand.innerText = `${this.currentOperand.innerText} ^`;
-        this.currentOperand.innerText = "";
+        handlerRadicalWithDegree.handler(
+          this.previousOperand,
+          this.currentOperand
+        );
     }
   }
 }
-
+export class HandlerRadical {
+  handler(currentOperand, degree) {
+    currentOperand.innerText = Math.pow(+currentOperand.innerText, degree);
+  }
+}
+export class HandlerRadicalWithDegree {
+  handler(previousOperand, currentOperand) {
+    previousOperand.innerText = `${currentOperand.innerText} ^`;
+    currentOperand.innerText = "";
+  }
+}
 export class HandlerClickRadical extends Calculator {
   handler(btn) {
     if (!this.currentOperand.innerText) {
@@ -71,14 +80,26 @@ export class HandlerClickRadical extends Calculator {
     }
     switch (btn.target.innerText) {
       case "√x":
-        this.currentOperand.innerText = Math.sqrt(
-          +this.currentOperand.innerText
-        );
+        handlerSecondRadical.handler(this.currentOperand);
+        break;
       case "∛x":
-        this.currentOperand.innerText = Math.cbrt(
-          this.currentOperand.innerText
-        );
+        handlerThirdRadical.handler(this.currentOperand)
     }
+  }
+}
+export class HandlerSecondRadical {
+  handler(currentOperand) {
+    currentOperand.innerText = Math.sqrt(
+      +currentOperand.innerText
+    );
+  }
+}
+
+export class HandlerThirdRadical {
+  handler(currentOperand) {
+    currentOperand.innerText = Math.cbrt(
+      currentOperand.innerText
+    );
   }
 }
 

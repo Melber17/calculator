@@ -1,5 +1,13 @@
 import { Calculator } from "./handlersToDisplayResult";
-import {currentOperand, previousOperand, memoryContainer} from "../../constants/constants";
+import {
+  currentOperand,
+  previousOperand,
+  memoryContainer,
+  clearMemoryHandler,
+  reCallMemoryHandler,
+  plusCallMemoryHandler,
+  minusMemoryHandler,
+} from "../../constants/constants";
 export class HandlerChangeMemory extends Calculator {
   constructor(currentOperand, previousOperand, memoryContainer) {
     super(currentOperand, previousOperand);
@@ -8,28 +16,47 @@ export class HandlerChangeMemory extends Calculator {
   handler(btn) {
     switch (btn.target.innerText) {
       case "mc":
-        memoryContainer.innerText = "";
+        clearMemoryHandler.handler(memoryContainer);
         break;
       case "mr":
-        if (memoryContainer.innerText) {
-          currentOperand.innerText = memoryContainer.innerText.substring(3);
-        }
+        reCallMemoryHandler.handler(memoryContainer);
         break;
       case "m+":
-        if (currentOperand.innerText) {
-          memoryContainer.innerText =
-            "M: " +
-            (+memoryContainer.innerText.substring(3) +
-              +currentOperand.innerText);
-        }
+        plusCallMemoryHandler.handler(memoryContainer);
         break;
       case "m-":
-        if (currentOperand.innerText) {
-          memoryContainer.innerText =
-            "M: " +
-            (+memoryContainer.innerText.substring(3) -
-              +currentOperand.innerText);
-        }
+        minusMemoryHandler.handler(memoryContainer);
+    }
+  }
+}
+
+export class ClearMemoryHandler {
+  handler(memory) {
+    memory.innerText = "";
+  }
+}
+export class ReCallMemoryHandler {
+  handler(memory) {
+    if (memory.innerText) {
+      currentOperand.innerText = memory.innerText.substring(3);
+    }
+  }
+}
+
+export class PlusCallMemoryHandler {
+  handler(memory) {
+    if (currentOperand.innerText) {
+      memory.innerText =
+        "M: " + (+memory.innerText.substring(3) + +currentOperand.innerText);
+    }
+  }
+}
+
+export class MinusMemoryHandler {
+  handler(memory) {
+    if (currentOperand.innerText) {
+      memory.innerText =
+        "M: " + (+memory.innerText.substring(3) - +currentOperand.innerText);
     }
   }
 }

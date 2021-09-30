@@ -1,6 +1,6 @@
 import { Calculator } from "../handlersToDisplay/handlersToDisplayResult";
 import { currentOperand, previousOperand } from "../../constants/constants";
-import { division, multiplication } from "../../helpers/mathFunctions";
+import { addition, division, multiplication } from "../../helpers/mathFunctions";
 import { displayCurrentValues } from "../../helpers/displayValues";
 export class HandlerClickMainOperation extends Calculator {
   constructor(currentOperand, previousOperand, radicalCustomBtnHelper) {
